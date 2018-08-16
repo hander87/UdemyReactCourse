@@ -1,75 +1,24 @@
 import React, { Component } from 'react';
 import './App.css';
-import Person from './Person/Person';
 
 class App extends Component {
-
-  state = {
-    persons: [
-      { name: 'Hannes', age: 31 },
-      { name: 'Emma', age: 27 },
-      { name: 'Marit', age: 21 }
-    ],
-    otherState: 'Some other value'
-  }
-
-  switchNameHandler = (newName) => {
-    // console.log('Clicki click!');
-    // DON'T DO THIS: this.state.persons[0].name = 'Hones';
-    this.setState({
-      persons: [
-        { name: newName, age: 31 },
-        { name: 'Emma', age: 27 },
-        { name: 'Marit', age: 81 }
-      ]
-    })
-  }
-
-  nameChangeHandler = (event) => {
-    this.setState({
-      persons: [
-        { name: 'Hannes', age: 31 },
-        { name: event.target.value, age: 27 },
-        { name: 'Marit', age: 21 }
-      ]
-    })
-  }
-
   render() {
-
-    const ourStyle = {
-      backgroundColor: 'white',
-      font: 'inherit',
-      border: '1px solid blue',
-      padding: '8px',
-      cursor: 'pointer'
-    };
-
     return (
       <div className="App">
-        <h1>Hej React</h1>
-        <p>Paragraf</p>
-        <button
-          style={ourStyle}
-          onClick={ () => this.switchNameHandler('SwitchHannes') }>
-          Switch Name
-        </button>
-        <Person
-          name={this.state.persons[0].name}
-          age={this.state.persons[0].age} />
-        <Person
-          name={this.state.persons[1].name}
-          age={this.state.persons[1].age}
-          click={this.switchNameHandler.bind(this, 'Hunnes')}
-          changed={this.nameChangeHandler}>
-          My Hobbies: Racing
-        </Person>
-        <Person
-          name={this.state.persons[2].name}
-          age={this.state.persons[2].age} />
+        <ol>
+          <li>Create TWO new components: UserInput and UserOutput</li>
+          <li>UserInput should hold an input element, UserOutput two paragraphs</li>
+          <li>Output multiple UserOutput components in the App component (any paragraph texts of your choice)</li>
+          <li>Pass a username (of your choice) to UserOutput via props and display it there</li>
+          <li>Add state to the App component (=> the username) and pass the username to the UserOutput component</li>
+          <li>Add a method to manipulate the state (=> an event-handler method)</li>
+          <li>Pass the event-handler method reference to the UserInput component and bind it to the input-change event</li>
+          <li>Ensure that the new input entered by the user overwrites the old username passed to UserOutput</li>
+          <li>Add two-way-binding to your input (in UserInput) to also display the starting username</li>
+          <li>Add styling of your choice to your components/ elements in the components - both with inline styles and stylesheets</li>
+        </ol>
       </div>
     );
-    // return React.createElement('div', {className: 'App'}, React.createElement('h1', null, 'Hej React'));
   }
 }
 
