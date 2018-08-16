@@ -20,8 +20,7 @@ class App extends Component {
         <UserInput username={this.state.username} changed={this.manipulateStateHandler} />
         <UserOutput username={this.state.username} />
         <UserOutput username={this.state.username} />
-
-
+        
         <ol>
           <li style={{color: 'green'}}>Create TWO new components: UserInput and UserOutput</li>
           <li style={{color: 'green'}}>UserInput should hold an input element, UserOutput two paragraphs</li>
