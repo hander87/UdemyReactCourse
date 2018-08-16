@@ -1,11 +1,11 @@
 import React from 'react';
 
-const person = () => {
+const person = (props) => {
 
-  const age = Math.floor(Math.random() * 30);
-  
+  const randomAge = Math.floor(Math.random() * 30);
+
   return (
-    <p>Im a person, and I am {age} years old</p>
+    <p>My name is {props.name}, and I am {props.age} years old (previously {randomAge})</p>
   );
 }
 
