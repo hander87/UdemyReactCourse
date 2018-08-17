@@ -16,7 +16,7 @@ class App extends Component {
 
   nameChangeHandler = (event, id) => {
     const personInd = this.state.persons.findIndex( (p) => {
-      p.id === id;
+      return p.id === id;
     });
 
     const person = {
@@ -34,9 +34,9 @@ class App extends Component {
 
   deletePersonHandler = (personIndex) => {
     // const persons = this.state.persons.slice();
-    const persons = [... this.state.persons]
+    const persons = [...this.state.persons];
     persons.splice(personIndex, 1);
-    this.setState({persons: persons})
+    this.setState({persons: persons});
   }
 
   togglePersonsHandler = () => {
