@@ -32,19 +32,13 @@ class App extends Component {
   }
 
   render() {
-    let charComponent = null;
-
-    charComponent = (
-      <div>
-        {this.state.textArray.map((letter, index) => {
-          return (<CharComponent
-                    letter={this.state.textArray[index]}
-                    click={() => this.deleteLetterHandler(index)}
-                    key={(index)}
-                  />)
-        })}
-      </div>
-    );
+    const charComponent = this.state.textArray.map((letter, index) => {
+      return (<CharComponent
+                letter={this.state.textArray[index]}
+                click={() => this.deleteLetterHandler(index)}
+                key={(index)}
+              />)
+    });
 
     return (
       <div className="App">
