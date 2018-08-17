@@ -5,7 +5,22 @@ const randomAge = Math.floor(Math.random() * 30);
 
 class Person extends Component {
 
+  constructor(props) {
+    super(props);
+    console.log('[Person.js] | Inside Constructor', props);
+
+  }
+
+  componentWillMount() {
+    console.log('[Person.js] | Inside componentWillMount', this.props);
+  }
+
+  componentDidMount() {
+    console.log('[Person.js] | Inside componentDidMount', this.props);
+  }
+
   render() {
+    console.log('[Person.js] | Inside componentDidMount', this.props);
     return (
       <div className={classes.Person}>
         <p onClick={this.props.click}>My name is {this.props.name}, and I am {this.props.age} years old (previously {randomAge})</p>
@@ -14,7 +29,6 @@ class Person extends Component {
       </div>
     );
   }
-
 }
 
 export default Person;
